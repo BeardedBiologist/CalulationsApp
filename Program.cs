@@ -4,20 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleUI
+//  BREIF  
+//  Create a Console application with static class that
+//  handles calculations
+
+
+namespace Calulations
 {
     class Program
     {
         static void Main(string[] args)
         {
             //
-            //  Ask name and clear
-            //  Greet user with time
-            //  Ask for calculation type
-            //  Ask for numbers
+            //  Ask for numbers (x and y)
+            //  Ask for calculation type ( + - * / )
             //  Give Result 
             //
 
+            double x = DataCollection.GetADouble("Please enter your first " +
+                "number: ");
+            double y = DataCollection.GetADouble("Please enter your second " +
+                "number: ");
+            string OperationType = DataCalculations.getType("What operation " +
+                "would you like to perform? ( *  /  +  -  )");
 
 
         }
