@@ -18,20 +18,30 @@ namespace Calulations
             //
             //  Ask for numbers (x and y)
             //  Ask for calculation type ( + - * / )
-            //  Give Result 
+            //  Give Result
+            //  Ask user to quit or loop
             //
 
-            double x = DataCollection.GetADouble("Please enter your first " +
-                "number: ");
-            double y = DataCollection.GetADouble("Please enter your second " +
-                "number: ");
-            string OperationType = DataCalculations.getType("What operation " +
-                "would you like to perform? ( *  /  +  -  ): ", x, y);
+            string closeProgram = "notYet";
 
-            double answer = DataCalculations.PerformOperation(x, y, OperationType);
+            while (closeProgram != "q" && closeProgram != "Q")
+            {
+                Console.Clear();
+                double x = DataCollection.GetADouble("Please enter your first " +
+                        "number: ");
+                double y = DataCollection.GetADouble("Please enter your second " +
+                    "number: ");
+                string OperationType = DataCalculations.getType("What operation " +
+                    "would you like to perform? ( *  /  +  -  ): ", x, y);
 
+                double answer = DataCalculations.PerformOperation(x, y, OperationType);
+
+                Console.Clear();
+                Console.WriteLine($"{x} {OperationType} {x} = {answer} \n\n");
+                closeProgram = DataCollection.GetAString("Press enter to continue or Q to quit:\n");
+            }
             Console.Clear();
-            Console.WriteLine($"{x} {OperationType} {x} = {answer}");
+            Console.WriteLine("Thanks for using this calculator app");
         }
     }
 }
