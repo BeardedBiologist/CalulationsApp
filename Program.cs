@@ -26,9 +26,12 @@ namespace Calulations
             double y = DataCollection.GetADouble("Please enter your second " +
                 "number: ");
             string OperationType = DataCalculations.getType("What operation " +
-                "would you like to perform? ( *  /  +  -  )");
+                "would you like to perform? ( *  /  +  -  ): ", x, y);
 
+            double answer = DataCalculations.PerformOperation(x, y, OperationType);
 
+            Console.Clear();
+            Console.WriteLine($"{x} {OperationType} {x} = {answer}");
         }
     }
 }

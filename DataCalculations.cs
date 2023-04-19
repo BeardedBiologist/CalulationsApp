@@ -3,47 +3,39 @@ namespace Calulations
 {
 	public static class DataCalculations
 	{
-        public static string getType(string message)
+        public static string getType(string message, double x, double y)
         {
             Console.Write(message);
             string calculationType = Console.ReadLine();
 
-            while (calculationType != "*" && calculationType != "/" && calculationType != "+" && calculationType != "-")
+            while (calculationType != "*" && calculationType != "/" &&
+                calculationType != "+" && calculationType != "-")
             {
                 Console.Clear();
-                Console.WriteLine("that is not a valid operation type.... try again");
+                Console.WriteLine("That is an INVALID operation type.... try again \n\n");
+                Console.WriteLine($"Your first number was {x} and your second number was {y}");
+                Console.WriteLine(message);
                 calculationType = Console.ReadLine();
             }
             return calculationType;
 
         }
 
-        public static double performOperation(double x, double y)
+        public static double PerformOperation(double x, double y, string OperationType)
         {
-         
-            //bool result = false;
-
-            //while (!result)
-            //{
-            double nullnull = 0;
-            string calculationType = Console.ReadLine();
-
-            try
-            {
-
-                if (calculationType == "*")
+                if (OperationType == "*")
                 {
                     double output = x * y;
                     //result = true;
                     return output;
                 }
-                else if (calculationType == "/")
+                else if (OperationType == "/")
                 {
                     double output = x / y;
                     //result = true;
                     return output;
                 }
-                else if (calculationType == "+")
+                else if (OperationType == "+")
                 {
                     double output = x + y;
                     //result = true;
@@ -55,19 +47,6 @@ namespace Calulations
                     //result = true;
                     return output;
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Not a valid operation type", ex);
-                return nullnull;
-            }
-                //else
-                //{
-                //    Console.WriteLine("You have entered an incorrect operation type.");
-                //    result = false;
-                //}
-            //} 
-
         }
     }
 }
