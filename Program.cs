@@ -10,6 +10,15 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            //
+            //  Ask name and clear
+            //  Greet user with time
+            //  Ask for calculation type
+            //  Ask for numbers
+            //  Give Result 
+            //
+
+
 
         }
     }
